@@ -5,7 +5,7 @@ import Image from "next/image";
 
 
 
-export default function Main ({todos, setTodos}) {
+export default function Main ({todos, setTodos, handleBin, handleIsDone}) {
 
    
 
