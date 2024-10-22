@@ -49,6 +49,23 @@ export default createGlobalStyle`
   }
   footer {
     position: fixed;
-    bottom: 0;
+    bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  footer button {
+    background: var(--white);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-family: "Fredoka", sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  footer button:hover {
+    background: var(--gray);
   }
 `;

@@ -1,10 +1,9 @@
-export default function FooterBtns() {
+"use client";
+
+export default function FooterBtns({role, onClick}) {
 
     return(
-        <>
-            <button type="button">Save List</button>
-            <button type="button">Clear List</button>
-        </>
+            <button type="button" onClick={onClick}>{role}</button>
     )
 
 }

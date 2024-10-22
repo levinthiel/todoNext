@@ -1,25 +1,13 @@
 "use client"
 import styled, { css } from "styled-components";
 import InputForm from "../input";
-import { useState } from "react";
 import Image from "next/image";
 
 
-export default function Main () {
 
-    const [todos, setTodos] = useState([]);
+export default function Main ({todos, setTodos}) {
 
-    function handleBin(id) {
-        setTodos(todos.filter((todo) => todo.id !== id));
-    }
-    function handleIsDone(id) {
-        setTodos(
-            todos.map((todo) =>
-              todo.id === id ? { ...todo, isDone: !todo.isDone } : todo
-            )
-        );
-    }
-
+   
 
 
     return (
