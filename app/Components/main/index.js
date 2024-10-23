@@ -12,7 +12,7 @@ export default function Main ({todos, setTodos, handleBin, handleIsDone}) {
 
     return (
         <MainCompo>
-            <InputForm setTodos={setTodos}  todos={todos} placeholder='write a to do and press "Send"'/>
+            <InputForm setTodos={setTodos}  todos={todos} placeholder='write a to do and press "Enter"'/>
             <ul>
                 {todos.length > 0 ? (
                     todos.map((todo) => (
@@ -49,6 +49,7 @@ const MainCompo = styled.main`
     max-width: 450px;
     margin: 0px auto;
     width: 450px;
+    padding: 10px;
 `;
 const Styledli = styled.li`
     color: var(--black);

@@ -46,16 +46,18 @@ export default createGlobalStyle`
   }
   footer {
     position: fixed;
-    bottom: 10px;
+    bottom: 0px;
     width: 100%;
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 25px;
+    padding:10px;
+    background: var(--black);
   }
   footer button {
     background: var(--white);
     border: none;
-    padding: 12px 25px;
+    padding: 12px 30px;
     border-radius: 25px;
     font-size: 1.1rem;
     font-weight: bold;

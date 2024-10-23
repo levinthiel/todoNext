@@ -67,4 +67,5 @@ const StyledInput = styled.input`
     border: none;
     background-color: var(--white);
     font-family: inherit;
+    margin-top: 100px;
 `;

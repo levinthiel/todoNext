@@ -5,6 +5,7 @@ import FooterBtns from "./Components/footer/footerbtns";
 import  useLocalStorageState  from "use-local-storage-state";
 
 
+
 export default function Home() {
 
   const [todos, setTodos] = useLocalStorageState("todos", {defaultValue: []});
@@ -36,7 +37,8 @@ export default function Home() {
       </header>
       <Main  todos={todos} setTodos={setTodos} handleBin={handleBin} handleIsDone={handleIsDone}/>
       <footer >
-        {/* <FooterBtns role={"Save list"} onClick={saveAllTodos}/> */}
+        <FooterBtns role={"Save list"} onClick={saveAllTodos}/>
+        <FooterBtns role={"My lists"} link="/mylists"/>
         <FooterBtns role={"Clear list"} onClick={clearAllTodos}/>
       </footer>
     </>
