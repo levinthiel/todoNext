@@ -46,6 +46,7 @@ export default function InputForm ({placeholder, setTodos, todos}) {
         console.log("prevocolor", prevColor)
 
         event.target.reset();
+        event.target.focus();
 
     }
 

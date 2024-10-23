@@ -1,5 +1,4 @@
 "use client";
-import Logo from "./Components/Logo";
 import Main from "./Components/main";
 import FooterBtns from "./Components/footer/footerbtns";
 import  useLocalStorageState  from "use-local-storage-state";
@@ -37,13 +36,11 @@ export default function Home() {
 
   return (
     <>
-      <header >
-        <Logo />
-      </header>
+
       <Main  todos={todos} setTodos={setTodos} handleBin={handleBin} handleIsDone={handleIsDone}/>
 
       {isModalOpen && (
-        <SavingModal></SavingModal>
+        <SavingModal setModalOpen={setModalOpen}></SavingModal>
       )}
       <footer >
         <FooterBtns role={"Save list"} onClick={saveAllTodos}/>

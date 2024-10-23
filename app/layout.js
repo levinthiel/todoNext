@@ -1,5 +1,7 @@
+import Logo from "./Components/Logo";
 import GlobalStyle from "./styles";
 import { Fredoka } from 'next/font/google'
+
 const fred = Fredoka({
   subsets: ['latin'],})
 
@@ -14,6 +16,9 @@ export default function RootLayout({ children }) {
     <html lang="en" className={fred.className} >
       <body >
       <GlobalStyle />
+        <header >
+          <Logo />
+        </header>
         {children}
       </body>
     </html>

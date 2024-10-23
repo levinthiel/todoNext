@@ -1,6 +1,9 @@
 import styled from "styled-components"
 
-export default function SavingModal(){
+export default function SavingModal({setModalOpen}){
+    function cancelSave(){
+        setModalOpen(false);
+      }
     return(
         <>
             <StyledMOdalContainer className="modal">
@@ -10,7 +13,7 @@ export default function SavingModal(){
                     </label>
                     <input id="listName" name="listName" type="text" placeholder="e.g. Todos for work"></input>
                     <StyledbuttonContainer>
-                        <button type="button">Cancel</button>
+                        <button type="button" onClick={cancelSave}>Cancel</button>
                         <button type="button">Save</button>
                     </StyledbuttonContainer>
                 </StyledInputContainer>
