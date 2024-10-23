@@ -60,12 +60,5 @@ export default function InputForm ({placeholder, setTodos, todos}) {
 
 /*-------CSS----------------------------------------*/
 const StyledInput = styled.input`
-    width: 100%;
-    padding: 0.75rem;
-    font-size: 1.2rem;
-    border-radius: 15.5rem;
-    border: none;
-    background-color: var(--white);
-    font-family: inherit;
     margin-top: 100px;
 `;

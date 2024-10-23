@@ -67,8 +67,9 @@ const StyledMylists = styled.li`
         background: var(--blue-dark);
     }
 `;
-const StyledListTitle = styled.span`
+const StyledListTitle = styled.h2`
     font-size: 1.5rem;
+    margin: 0;
 `;
 const StyledBackButton = styled.button`
     background-color: var(--white);
@@ -77,4 +78,11 @@ const StyledBackButton = styled.button`
     border-radius: 20px;
     font-family: inherit;
     font-size: 1rem;
+    display: flex;
+    gap: 10px;
+    font-weight: bold;
+
+    &:hover {
+        background-color: var(--gray);
+    }
 `;

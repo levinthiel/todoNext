@@ -40,6 +40,15 @@ export default createGlobalStyle`
     align-items: center;
     min-height: 100vh;
   }
+  input {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1.2rem;
+    border-radius: 15.5rem;
+    border: none;
+    background-color: var(--white);
+    font-family: inherit;
+  }
 
   ul {
     padding: 0;
@@ -54,7 +63,7 @@ export default createGlobalStyle`
     padding:10px;
     background: var(--black);
   }
-  footer button {
+  footer button, .modal button {
     background: var(--white);
     border: none;
     padding: 12px 30px;
@@ -66,5 +75,8 @@ export default createGlobalStyle`
   }
   footer button:hover {
     background: var(--gray);
+  }
+  a {
+    text-decoration: none;
   }
 `;

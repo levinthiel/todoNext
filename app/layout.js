@@ -1,6 +1,6 @@
 import GlobalStyle from "./styles";
 import { Fredoka } from 'next/font/google'
-const fred = Fredoka({  weight: '700',
+const fred = Fredoka({
   subsets: ['latin'],})
 
 

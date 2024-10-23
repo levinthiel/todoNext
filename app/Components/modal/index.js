@@ -3,9 +3,16 @@ import styled from "styled-components"
 export default function SavingModal(){
     return(
         <>
-            <StyledMOdalContainer>
+            <StyledMOdalContainer className="modal">
                 <StyledInputContainer>
-                    <h2>Enter Something</h2>
+                    <label for="listName">
+                        <h2>Enter a name for your list:</h2>
+                    </label>
+                    <input id="listName" name="listName" type="text" placeholder="e.g. Todos for work"></input>
+                    <StyledbuttonContainer>
+                        <button type="button">Cancel</button>
+                        <button type="button">Save</button>
+                    </StyledbuttonContainer>
                 </StyledInputContainer>
             </StyledMOdalContainer>
         </>
@@ -24,4 +31,16 @@ const StyledMOdalContainer = styled.div`
     align-items: center;
     `;
 const StyledInputContainer = styled.div`
+    width: 350px;
+    background: var(--black);
+    padding: 20px;
+    border-radius: 28px;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+`;
+const StyledbuttonContainer = styled.div`
+    display: flex;
+    justify-content: space-between;
 `;
