@@ -19,20 +19,20 @@ export default function Main ({todos, setTodos, handleBin, handleIsDone}) {
                         <Styledli key={todo.id} onClick={() => handleIsDone(todo.id)} $isDone={todo.isDone} $todoColor={todo.color} $todoColorDark={todo.colordark}>
                             {todo.text}
                             <div>
-                                <Binbtn >
+                                {/* <Binbtn >
                                     <Image
                                         src="/imgs/pen-solid.svg"
                                         width={20}
                                         height={20}
                                         alt="trash bin"/>
-                                </Binbtn>
-                                {/* <Binbtn onClick={(e) => { e.stopPropagation(); handleBin(todo.id); }}>
+                                </Binbtn> */}
+                                <Binbtn onClick={(e) => { e.stopPropagation(); handleBin(todo.id); }}>
                                     <Image
                                         src="/imgs/trash-solid.svg"
                                         width={20}
                                         height={20}
                                         alt="trash bin"/>
-                                </Binbtn> */}
+                                </Binbtn>
                             </div>
                         </Styledli>
                     ))
