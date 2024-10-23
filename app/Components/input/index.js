@@ -66,5 +66,5 @@ const StyledInput = styled.input`
     border-radius: 15.5rem;
     border: none;
     background-color: var(--white);
-    font-family: "Fredoka", sans-serif;
+    font-family: inherit;
 `;

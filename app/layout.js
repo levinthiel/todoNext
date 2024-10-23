@@ -1,4 +1,8 @@
 import GlobalStyle from "./styles";
+import { Fredoka } from 'next/font/google'
+const fred = Fredoka({  weight: '700',
+  subsets: ['latin'],})
+
 
 export const metadata = {
   title: "Tödö - a simple To Do list",
@@ -7,7 +11,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={fred.className} >
       <body >
       <GlobalStyle />
         {children}

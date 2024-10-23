@@ -1,8 +1,6 @@
 "use client"
 import { createGlobalStyle } from "styled-components";
 
-import { Fredoka } from 'next/font/google';
-const fred = Fredoka({ subsets: ['latin'] });
 
 export default createGlobalStyle`
   *,
@@ -37,7 +35,6 @@ export default createGlobalStyle`
   body {
     margin: 0;
     background-color: var(--black);
-    font-family: "Fredoka", sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -60,10 +57,10 @@ export default createGlobalStyle`
     border: none;
     padding: 12px 25px;
     border-radius: 25px;
-    font-family: "Fredoka", sans-serif;
     font-size: 1.1rem;
     font-weight: bold;
     cursor: pointer;
+    font-family: inherit;
   }
   footer button:hover {
     background: var(--gray);
