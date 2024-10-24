@@ -9,9 +9,8 @@ import { useState } from "react";
 export default function Home() {
 
   const [todos, setTodos] = useLocalStorageState("todos", {defaultValue: []});
-  const [todosList, setTodoList] = useLocalStorageState("todoLists", {defaultValue: []});
+  const [todosList, setTodoList] = useLocalStorageState("todosLists", {defaultValue: []});
   const [isModalOpen, setModalOpen] = useState(false);
-  const [inputValue, setInputValue] = useState('');
 
   function handleBin(id) {
       setTodos(todos.filter((todo) => todo.id !== id));
@@ -29,21 +28,31 @@ export default function Home() {
     setTodos([])
     console.log(todos)
   }
-  function saveAllTodos(){
+  function openSaveModal(){
     console.log("save")
     setModalOpen(true);
+  }
+  function saveList(event){
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData);
+    const newList = { name:data.name, todos: [todos]}
+    console.log(newList)
+    setModalOpen(false);
+    setTodoList([...todosList, newList])
+    console.log("todosList",todosList)
   }
 
   return (
     <>
 
-      <Main  todos={todos} setTodos={setTodos} handleBin={handleBin} handleIsDone={handleIsDone}/>
+      <Main  todos={todos} setTodos={setTodos} handleBin={handleBin} handleIsDone={handleIsDone} todosList={todosList}/>
 
       {isModalOpen && (
-        <SavingModal setModalOpen={setModalOpen}></SavingModal>
+        <SavingModal setModalOpen={setModalOpen} saveList={saveList}></SavingModal>
       )}
       <footer >
-        <FooterBtns role={"Save list"} onClick={saveAllTodos}/>
+        <FooterBtns role={"Save list"} onClick={openSaveModal}/>
         <FooterBtns role={"My lists"} link="/mylists"/>
         <FooterBtns role={"Clear list"} onClick={clearAllTodos}/>
       </footer>

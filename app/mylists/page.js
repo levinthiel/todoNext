@@ -2,10 +2,14 @@
 import styled from "styled-components";
 import Link from "next/link";
 import Image from "next/image";
+import Logo from "../Components/Logo";
 
 export default function Mylists() {
     return (
         <>
+            <header >
+                <Logo />
+            </header>
         <StyledListSection>
             <Link href="/">
                 <StyledBackButton type="button">

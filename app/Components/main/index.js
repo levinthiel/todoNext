@@ -2,21 +2,32 @@
 import styled, { css } from "styled-components";
 import InputForm from "../input";
 import Image from "next/image";
+import Logo from "../Logo";
 
 
-
-export default function Main ({todos, setTodos, handleBin, handleIsDone}) {
+export default function Main ({todos, setTodos, handleBin, handleIsDone, todosList}) {
 
    
 
 
     return (
         <MainCompo>
+            <header >
+                <Logo />
+            </header>
+             
             <InputForm setTodos={setTodos}  todos={todos} placeholder='write a to do and press "Enter"'/>
+            {todosList.length !== 0 && ( <p>Current List: {todosList[todosList.length -1].name}</p> ) }
             {todos.length ===0 && (
-                <StyledInfoText>
-                Your to dos are only sotred locally inside your browser
-                </StyledInfoText>)}
+                <StyledInfoMsg>
+                    <Image
+                    src="/imgs/circle-info-solid.svg"
+                    width={20}
+                    height={20}
+                    alt="trash bin"/>
+                    <p>These to dos are only sotred locally inside your browser</p>
+                </StyledInfoMsg>
+                )}
             <ul>
                 {todos.length > 0 ? (
                     todos.map((todo) => (
@@ -24,11 +35,7 @@ export default function Main ({todos, setTodos, handleBin, handleIsDone}) {
                             {todo.text}
                             <div>
                                 {/* <Binbtn >
-                                    <Image
-                                        src="/imgs/pen-solid.svg"
-                                        width={20}
-                                        height={20}
-                                        alt="trash bin"/>
+                                    
                                 </Binbtn> */}
                                 <Binbtn onClick={(e) => { e.stopPropagation(); handleBin(todo.id); }}>
                                     <Image
@@ -41,7 +48,7 @@ export default function Main ({todos, setTodos, handleBin, handleIsDone}) {
                         </Styledli>
                     ))
                 ) : (
-                    <p></p>
+                    null
                 )}
             </ul>
         </MainCompo>
@@ -97,4 +104,11 @@ const Binbtn = styled.button`
     border: none;
     border-radius: 25px;
     padding: 12px 17px;
+`;
+
+const StyledInfoMsg = styled.div`
+    display: flex;
+    color: var(--white);
+    justify-content: space-between;
+    align-items: center;
 `;

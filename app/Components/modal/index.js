@@ -1,20 +1,21 @@
 import styled from "styled-components"
 
-export default function SavingModal({setModalOpen}){
+export default function SavingModal({setModalOpen, saveList}){
     function cancelSave(){
         setModalOpen(false);
       }
     return(
         <>
             <StyledMOdalContainer className="modal">
-                <StyledInputContainer>
+                <StyledInputContainer onSubmit={saveList}>
                     <label for="listName">
                         <h2>Enter a name for your list:</h2>
                     </label>
-                    <input id="listName" name="listName" type="text" placeholder="e.g. Todos for work"></input>
+                    <input id="listName" name="name" type="text" placeholder="e.g. Todos for work"></input>
+                    
                     <StyledbuttonContainer>
                         <button type="button" onClick={cancelSave}>Cancel</button>
-                        <button type="button">Save</button>
+                        <button type="submit" onSubmit={saveList}>Save</button>
                     </StyledbuttonContainer>
                 </StyledInputContainer>
             </StyledMOdalContainer>
@@ -33,7 +34,7 @@ const StyledMOdalContainer = styled.div`
     justify-content: center;
     align-items: center;
     `;
-const StyledInputContainer = styled.div`
+const StyledInputContainer = styled.form`
     width: 350px;
     background: var(--black);
     padding: 20px;
