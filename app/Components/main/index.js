@@ -13,6 +13,10 @@ export default function Main ({todos, setTodos, handleBin, handleIsDone}) {
     return (
         <MainCompo>
             <InputForm setTodos={setTodos}  todos={todos} placeholder='write a to do and press "Enter"'/>
+            {todos.length ===0 && (
+                <StyledInfoText>
+                Your to dos are only sotred locally inside your browser
+                </StyledInfoText>)}
             <ul>
                 {todos.length > 0 ? (
                     todos.map((todo) => (
