@@ -36,6 +36,7 @@ export default function Home() {
     event.preventDefault();
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
+    console.log("data",data)
     const newList = { name:data.name, todos: [todos]}
     console.log(newList)
     setModalOpen(false);

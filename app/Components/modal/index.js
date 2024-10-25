@@ -12,7 +12,17 @@ export default function SavingModal({setModalOpen, saveList}){
                         <h2>Enter a name for your list:</h2>
                     </label>
                     <input id="listName" name="name" type="text" placeholder="e.g. Todos for work"></input>
-                    
+                    <StyledSelect name="color"  >
+                        <option value="0">Select a color:</option>
+                        <option value="#97C9F2" style={{ background: "var(--lightblue)" }}>Cloud Blue</option>
+                        <option value="#F1525D" style={{ background: "var(--red)" }}>Fuji Red</option>
+                        <option value="#F1525D" style={{ background: "var(--pink)" }}>Panther Pink</option>
+                        <option value="#6D87EE" style={{ background: "var(--purpleblue)" }}>Neptune Blue</option>
+                        <option value="#F27942" style={{ background: "var(--orange)" }}>Goku Orange</option>
+                        <option value="#37C66D" style={{ background: "var(--green)" }}>Lantern Green</option>
+                        <option value="#E3E949" style={{ background: "var(--yellow)" }}>Mellow Yellow</option>
+                        <option value="#0B6CEC" style={{ background: "var(--blue)" }}>Nightwing Blue</option>
+                    </StyledSelect>
                     <StyledbuttonContainer>
                         <button type="button" onClick={cancelSave}>Cancel</button>
                         <button type="submit" onSubmit={saveList}>Save</button>
@@ -47,4 +57,12 @@ const StyledInputContainer = styled.form`
 const StyledbuttonContainer = styled.div`
     display: flex;
     justify-content: space-between;
+`;
+const StyledSelect = styled.select `
+    padding: 15px 15px;
+    border-radius: 25px;
+    font-family: inherit;
+    font-weight: bold;
+    border: none;
+    font-size: 1rem;
 `;

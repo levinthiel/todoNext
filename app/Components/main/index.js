@@ -17,7 +17,7 @@ export default function Main ({todos, setTodos, handleBin, handleIsDone, todosLi
             </header>
              
             <InputForm setTodos={setTodos}  todos={todos} placeholder='write a to do and press "Enter"'/>
-            {todosList.length !== 0 && ( <p>Current List: {todosList[todosList.length -1].name}</p> ) }
+            {todosList.length !== 0 && ( <StlyedCurrentListName>Current List: {todosList[todosList.length -1].name}</StlyedCurrentListName> ) }
             {todos.length ===0 && (
                 <StyledInfoMsg>
                     <Image
@@ -112,3 +112,9 @@ const StyledInfoMsg = styled.div`
     justify-content: space-between;
     align-items: center;
 `;
+const StlyedCurrentListName = styled.p`
+    color:  var(--white);
+    text-align: center;
+    font-size: 1rem;
+`;
+

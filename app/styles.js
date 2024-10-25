@@ -17,7 +17,7 @@ export default createGlobalStyle`
   --lightblue-dark:#709DC2;
   --red:#F1525D;
   --red-dark:#A63038;
-  --pink:#F28FC0;
+  --pink:#F1525D;
   --pink-dark:#B6638B;
   --blue:#0B6CEC;
   --blue-dark:#1256AF;
